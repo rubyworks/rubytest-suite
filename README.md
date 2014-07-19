@@ -49,17 +49,43 @@ See the [Wiki](http://github.com/rubyworks/test/wiki) for further details.
 
 ## Installation
 
-Rubytest is available as a Gem package.
+Rubytest is available as a gem metapackage.
 
     $ gem install rubytest
 
-Rubytest is compliant with Setup.rb layout standard, so it can
-also be installed in an FHS compliant fashion if necessary.
+This installs the [rubytest-core]() gem and a small set of common plugin gems
+including:
+
+* [rubytest-cli]() - Commandline interface for running tests.
+* [rubytest-rake]() - Rake task for running tests.
+* [rubytest-progress]() - Progressbar test reporter.
+* [rubytest-outline]() - Outline test reporter.
 
 
 ## Running Tests
 
-There are a few ways to run tests. 
+There are a few ways to run tests. But word to the wise, it's best to automate
+your test runs using a runner script, while the cli tool is best for debugging
+sessions. The Rake task sits somewhere in between these two depending on how you
+configure it.
+
+### Via Runner Scripts
+
+Out of the box, Rubytest Core library doesn't provide any special means for 
+running tests, you simply write you own runner script using the Rubytest API.
+Here is the basic example:
+
+    require 'rubytest'
+
+    Test.run! do |r|
+      r.loadpath 'lib'
+      r.test_files 'test/test_*.rb'
+    end
+
+Put that in a `test/runner.rb` script and run it with `ruby` or
+add `#!/usr/bin/env ruby` at the top and put it in `bin/test`
+setting `chmod u+x bin/test`. Either way, you now have your test
+runner.
 
 ### Via Command-line Tool
 
@@ -98,24 +124,6 @@ A basic example in its case, add to ones Rakefile:
     end
 
 See the Wiki for more detailed information on the different ways to run tests.
-
-### Via Runner Scripts
-
-Out of the box Rubytest doesn't provide any special means for doing so,
-you simply write you own runner script using the Rubytest API.
-Here is the basic example:
-
-    require 'rubytest'
-
-    Test.run! do |r|
-      r.loadpath 'lib'
-      r.test_files 'test/test_*.rb'
-    end
-
-Put that in a `test/runner.rb` script and run it with `ruby` or
-add `#!/usr/bin/env ruby` at the top and put it in `bin/test`
-setting `chmod u+x bin/test`. Either way, you now have your test
-runner.
 
 
 ## Requirements

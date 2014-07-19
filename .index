@@ -31,18 +31,21 @@ conflicts: []
 alternatives: []
 resources:
 - type: home
-  uri: http://rubyworks.github.com/rubytest
+  uri: http://rubyworks.github.com/rubytest-suite
   label: Homepage
 - type: code
-  uri: http://github.com/rubyworks/rubytest
+  uri: http://github.com/rubyworks/rubytest-suite
   label: Source Code
+- type: bugs
+  uri: http://github.com/rubyworks/rubytest-suite/issues
+  label: Issue Tracker
 - type: mail
   uri: http://groups.google.com/group/rubyworks-mailinglist
   label: Mailing List
 repositories:
 - name: upstream
   scm: git
-  uri: git@github.com:rubyworks/rubytest.git
+  uri: git@github.com:rubyworks/rubytest-suite.git
 categories: []
 copyrights:
 - holder: RubyWorks
@@ -52,11 +55,12 @@ customs: []
 paths:
   lib:
   - lib
-name: rubytest
-title: Ruby Test
+name: rubytest-suite
+title: Rubytest Suite
 version: 1.0.0
-summary: Ruby Universal Test Harness
-description: Ruby Test is a universal test harness for Ruby. It can handle any compliant
-  test framework, even running tests from multiple frameworks in a single pass.
+summary: Rubytest and a suite of common plugins
+description: Rubytest is a universal test harness for Ruby. This gem provides the
+  core library and a suite of common plugins making it a more convenient dependency
+  for most use cases.
 created: '2011-07-23'
 date: '2014-07-18'

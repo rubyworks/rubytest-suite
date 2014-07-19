@@ -1,27 +1,29 @@
 ---
 name:
-  rubytest
+  rubytest-suite
 
 version: 
   1.0.0
 
 title:
-  Ruby Test
+  Rubytest Suite
 
 summary:
-  Ruby Universal Test Harness
+  Rubytest and a suite of common plugins
 
 description:
-  Ruby Test is a universal test harness for Ruby. It can handle any compliant 
-  test framework, even running tests from multiple frameworks in a single pass.
+  Rubytest is a universal test harness for Ruby. This gem provides the core
+  library and a suite of common plugins making it a more convenient dependency
+  for most use cases.
 
 resources:
-  home: http://rubyworks.github.com/rubytest
-  code: http://github.com/rubyworks/rubytest
+  home: http://rubyworks.github.com/rubytest-suite
+  code: http://github.com/rubyworks/rubytest-suite
+  bugs: http://github.com/rubyworks/rubytest-suite/issues
   mail: http://groups.google.com/group/rubyworks-mailinglist
 
 repositories:
-  upstream: git@github.com:rubyworks/rubytest.git
+  upstream: git@github.com:rubyworks/rubytest-suite.git
 
 authors:
   - trans <transfire@gmail.com>
